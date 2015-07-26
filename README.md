@@ -11,7 +11,7 @@ Clone the repository:
     git clone git@github.com:harunyardimci/gitlab-repo-cloner.git
     cd gitlab-repo-cloner
 
-Edit `config.py` file and add your your gitlab url and your personal PRIVATE_TOKEN,
+Edit `config.py` file and add your gitlab url and your personal PRIVATE_TOKEN,
 
     URL             = 'http://your-gitlab-host.org'
     POSTFIX         = '/api/v3/'
@@ -28,4 +28,4 @@ It is very simple to use. You just need to pass the group name (or id) as an arg
 
     gital my-group
 
-This command will create a directory called `my-group` in the current directory and will clone all projects into that.
+This command will create a directory called `my-group` in the current directory and will clone all projects into that. If you already cloned some of the repositories, `gital` will skip those and continue with others. 
