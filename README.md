@@ -2,7 +2,7 @@
 
 **gital** is a very simple tool to clone all projects in a [gitlab](http://www.gitlab.com) group.
 
-gitall works on OS X, Linux, and Windows Python 2.7 or Python 3 installed.
+gital works on OS X, Linux, and Windows Python 2.7 or Python 3 installed.
 
 #Installation
 
