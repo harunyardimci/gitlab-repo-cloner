@@ -5,12 +5,11 @@
 import sys
 import os
 import requests
-import json
 import git
-from datetime import datetime
 from colorama import init as color_init, Fore, Style
 from . import __version__
 from .config import URL, POSTFIX, PRIVATE_TOKEN
+from requests import exceptions as rest_exceptions
 
 # Color definitions
 BOLD = Style.BRIGHT
@@ -82,13 +81,12 @@ def _getProjectsOfGroup(group=None):
         else:
             print(ERROR + 'Group project list API returned with the following code: %s ' % result.status_code)
             return False
-    except (ConnectTimeout, ReadTimeout) as e:
+    except rest_exceptions.Timeout:
         print(ERROR + 'Couldn\'t send request to or receive response from GitLab API within ' + API_TIMEOUT + ' seconds.')
-    except ConnectionError:
+    except rest_exceptions.ConnectionError:
         print(ERROR + 'Couldn\'t connect to GitLab API.')
     except:
         print(ERROR + 'GitLab API call failed.')
-
 
 
 def main(argv):
