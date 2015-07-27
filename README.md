@@ -8,7 +8,7 @@ gital works on OS X, Linux, and Windows Python 2.7 or Python 3 installed.
 
 Clone the repository:
 
-    git clone git@github.com:harunyardimci/gitlab-repo-cloner.git
+    git clone http://github.com/harunyardimci/gitlab-repo-cloner.git
     cd gitlab-repo-cloner
 
 Edit `config.py` file and add your gitlab url and your personal PRIVATE_TOKEN,
