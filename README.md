@@ -17,6 +17,8 @@ Edit `config.py` file and add your gitlab url and your personal PRIVATE_TOKEN,
     POSTFIX         = '/api/v3/'
     PRIVATE_TOKEN   = 'your-private-key'
 
+Please note that there is no '/' at the end of the url.
+
 Start Installation
 
     sudo python setup.py install
@@ -36,8 +38,8 @@ You need to remove the files manually.
 
 You can find the installed files by:
 
-    python setup.py install --record installed-files.txt
+    sudo python setup.py install --record installed-files.txt
 
 After you have the files, you can remove them by:
 
-    cat installed-files.txt | xargs rm -rf
+    sudo cat installed-files.txt | xargs rm -rf
