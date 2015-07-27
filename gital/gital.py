@@ -45,7 +45,7 @@ def _cloneRepos(group, projects, currentFolder):
 
         if not os.path.exists(repoPath):
             print(GREEN + project['name'] + RESET + ' is cloning.')
-            # repo = git.Repo.clone_from(project['ssh_url_to_repo'], repoPath, branch='master')
+            repo = git.Repo.clone_from(project['ssh_url_to_repo'], repoPath, branch='master')
             print(GREEN + project['name'] + RESET + ' clone process is completed.')
         else:
             print(BLUE + project['name'] + RESET + ' is already exists. Skipping this repository.')
@@ -82,7 +82,7 @@ def _getProjectsOfGroup(group=None):
         else:
             print(ERROR + 'Group project list API returned with the following code: %s ' % result.status_code)
             return False
-    except Timeout:
+    except (ConnectTimeout, ReadTimeout) as e:
         print(ERROR + 'Couldn\'t send request to or receive response from GitLab API within ' + API_TIMEOUT + ' seconds.')
     except ConnectionError:
         print(ERROR + 'Couldn\'t connect to GitLab API.')
@@ -119,6 +119,9 @@ def main(argv):
 
 
    projects = _getProjectsOfGroup(group)
+
+   if not projects:
+       exit(1)
 
    currentFolder = _getCurrentFolder()
 
