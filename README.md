@@ -4,6 +4,8 @@
 
 gital works on OS X, Linux, and Windows Python 2.7 or Python 3 installed.
 
+This project is inspired from [gitup](https://github.com/earwig/git-repo-updater) and has parts taken from there.
+
 #Installation
 
 Clone the repository:
@@ -21,7 +23,9 @@ Please note that there is no '/' at the end of the url.
 
 Start Installation
 
-    sudo python setup.py install
+    sudo python setup.py install --force
+
+`--force` will force the setuptools to update any prior version installed before.
 
 
 #Usage
@@ -31,6 +35,11 @@ It is very simple to use. You just need to pass the group name (or id) as an arg
     gital my-group
 
 This command will create a directory called `my-group` in the current directory and will clone all projects into that. If you already cloned some of the repositories, `gital` will skip those and continue with others.
+
+You can also pass `--update` parameter to update existing repositories.
+
+    gital my-group --update
+
 
 #Uninstallation
 
