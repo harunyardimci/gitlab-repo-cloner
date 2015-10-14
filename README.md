@@ -13,7 +13,7 @@ Clone the repository:
     git clone http://github.com/harunyardimci/gitlab-repo-cloner.git
     cd gitlab-repo-cloner
 
-Edit `config.py` file and add your gitlab url and your personal PRIVATE_TOKEN,
+Edit `gital/config.py` file and add your gitlab url and your personal PRIVATE_TOKEN,
 
     URL             = 'http://your-gitlab-host.org'
     POSTFIX         = '/api/v3/'
